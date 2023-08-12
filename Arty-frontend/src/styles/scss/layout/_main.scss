@@ -1,0 +1,23 @@
+.layout {
+    display: grid;
+    grid-template-columns: .3fr 6fr;
+    gap: 1rem;
+    padding: 1rem;
+    block-size: 100vh;
+    align-items: flex-start;
+}
+
+@media (max-width: 786px) {
+    .layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: 83.5vh 10vh;
+
+        header {
+            grid-row: 2 / -1;
+        }
+
+        main {
+            grid-row: 1 / 2;
+        }
+    } 
+}

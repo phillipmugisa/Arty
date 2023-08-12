@@ -1,0 +1,56 @@
+@use '../abstracts/colors' as colors;
+
+.main-content-header {
+    display: grid;
+    grid-template-columns: 5fr .25fr;
+    align-items: center;
+    background-color: colors.$main-content-header-background-color;
+    padding: .5rem;
+    border-radius: 5px;
+
+    .filter-group {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 1rem;
+        justify-content: flex-start;
+
+        &.artists {
+            display: none;
+        }
+
+        .filter-item {
+            display: grid;
+            grid-auto-flow: row;
+            justify-items: center;
+            gap: .25rem;
+            cursor: pointer;
+
+            .item-img {
+                border: none;
+                inline-size: 3vw;
+                aspect-ratio: 1;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            .item-name {
+                font-size: .9rem;
+                color: colors.$filter-text-color;
+                transition: all .3s ease-in-out;
+            }
+            
+            &:hover {
+                .item-name {
+                    color: colors.$filter-text-color-hover;
+                }
+            }
+        }
+    }
+
+    .filter-toggler {
+
+        .filter-toggle {
+            font-size: 1rem;
+        }
+    }
+}

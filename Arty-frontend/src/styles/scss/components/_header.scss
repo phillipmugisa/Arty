@@ -1,0 +1,48 @@
+@use "../abstracts/colors" as colors;
+
+$header-bdr: 5px;
+
+header.app-header {
+    display: grid;
+    justify-content: stretch;
+    background-color: colors.$header-background-color;
+    border-radius: $header-bdr;
+
+    nav {
+        display: grid;
+        grid-auto-flow: row;
+        gap: .5rem;
+
+        .nav-tab {
+            display: grid;
+            grid-auto-flow: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding:  1.5rem 1rem;
+
+            .nav-tab-label {
+                display: none;
+            }
+        }
+    }
+    
+    @media (max-width: 786px) {
+        nav {
+            grid-auto-flow: column;
+            grid-template-columns: repeat(5, 1fr);
+
+            .nav-tab {
+                padding:  1rem 1rem;
+                grid-auto-flow: row;
+                gap: 0;
+                justify-items: center;
+
+                .nav-tab-label {
+                    // display: block;
+                    font-size: .8rem;
+                }
+            }
+        }
+    }
+}
